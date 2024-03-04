@@ -12,6 +12,7 @@
 
 .form {
   width: 100%;
+  border: 2px solid rgb(47, 47, 47);
   max-width: 820px;
   background-color: #fff;
   border-radius: 10px;
@@ -121,10 +122,9 @@ textarea.input {
 
 .btn {
   padding: 0.6rem 1.3rem;
-  background-color: #fff;
-  border: 2px solid white;
+  background-color: #2cee91;
   font-size: 0.95rem;
-  color: #2cee91;
+  color: black;
   line-height: 1;
   border-radius: 5px;
   outline: none;
@@ -233,7 +233,6 @@ textarea.input {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: linear-gradient(45deg, #2cee91, #2cee91);
   color: black;
   text-align: center;
   line-height: 35px;

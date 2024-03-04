@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./Contact.css"; // Import CSS file for styling
 
 export const Contact = () => {
+  const [submitButtonText, setSubmitButtonText] = useState("Send");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,7 +20,18 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // Your form submission logic here
+    console.log("Form submitted:", formData);
+
+    // Reset form fields
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+    // Change button text to "Submitted"
+    setSubmitButtonText("Submitted");
   };
 
   useEffect(() => {
@@ -55,23 +68,19 @@ export const Contact = () => {
         <div className="form">
           <div className="contact-info">
             <h3 className="title">Let's get in touch</h3>
-            <p className="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              dolorum adipisci recusandae praesentium dicta!
-            </p>
+            <p className="text">Wanna collaborate or have anything to say?</p>
 
             <div className="info">
               <div className="information">
                 <i className="fas fa-map-marker-alt"></i> &nbsp; &nbsp;
-                <p>92 Cherry Drive Uniondale, NY 11553</p>
               </div>
               <div className="information">
                 <i className="fas fa-envelope"></i> &nbsp; &nbsp;
-                <p>lorem@ipsum.com</p>
+                <p>devsunite2024@gmail.com</p>
               </div>
               <div className="information">
                 <i className="fas fa-phone"></i>&nbsp; &nbsp;
-                <p>123-456-789</p>
+                <p>https://devsunite.com/</p>
               </div>
             </div>
 
@@ -79,16 +88,13 @@ export const Contact = () => {
               <p>Connect with us :</p>
               <div className="social-icons">
                 <a href="#">
-                  <i className="fab fa-facebook-f"></i>
+                  <i className="fa fa-instagram"></i>
                 </a>
                 <a href="#">
-                  <i className="fab fa-twitter"></i>
+                  <i className="fa fa-youtube"></i>
                 </a>
                 <a href="#">
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a href="#">
-                  <i className="fab fa-linkedin-in"></i>
+                  <i className="fa fa-twitter"></i>
                 </a>
               </div>
             </div>
@@ -98,40 +104,37 @@ export const Contact = () => {
             <span className="circle one"></span>
             <span className="circle two"></span>
 
-            <form onSubmit={handleSubmit} autoComplete="off">
+            <form
+              onSubmit={handleSubmit}
+              autoComplete="off"
+              action="https://formsubmit.co/devsunite2024@gmail.com"
+              method="POST"
+              encType="multipart/form-data"
+            >
               <h3 className="title">Contact us</h3>
               <div className="input-container">
                 <input
                   type="text"
+                  required
                   name="name"
                   className="input"
                   value={formData.name}
                   onChange={handleChange}
                 />
-                <label htmlFor="name">Username</label>
-                <span>Username</span>
+                <label htmlFor="name">Name</label>
+                <span>Name</span>
               </div>
               <div className="input-container">
                 <input
                   type="email"
                   name="email"
+                  required
                   className="input"
                   value={formData.email}
                   onChange={handleChange}
                 />
                 <label htmlFor="email">Email</label>
                 <span>Email</span>
-              </div>
-              <div className="input-container">
-                <input
-                  type="tel"
-                  name="phone"
-                  className="input"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-                <label htmlFor="phone">Phone</label>
-                <span>Phone</span>
               </div>
               <div className="input-container textarea">
                 <textarea
@@ -143,7 +146,8 @@ export const Contact = () => {
                 <label htmlFor="message">Message</label>
                 <span>Message</span>
               </div>
-              <input type="submit" value="Send" className="btn" />
+
+              <input type="submit" value={submitButtonText} className="btn" />
             </form>
           </div>
         </div>
