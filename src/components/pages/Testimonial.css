@@ -1,0 +1,12 @@
+.cards-testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin: 3% 0;
+}
+@media (max-width: 480px) {
+  .cards-testimonial {
+    flex-direction: column;
+  }
+}

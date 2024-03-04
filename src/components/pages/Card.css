@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #2cee91;
+  border-radius: 5px;
+  width: 15.438rem;
+  height: 18.813rem;
+}
+.card-text {
+  font-size: 1.313rem;
+  text-align: center;
+}
+.card-image {
+  height: 12.5rem;
+  width: 12.5rem;
+}

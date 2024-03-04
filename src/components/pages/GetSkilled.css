@@ -1,0 +1,31 @@
+.title {
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3.125rem;
+  padding: 10px 0;
+}
+.landingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 80px;
+}
+.landingimage {
+  width: 30rem;
+  height: 30rem;
+  margin: 3rem 4rem;
+}
+.skills {
+  width: 30%;
+  height: 30%;
+  margin: 3rem 4rem;
+}
+
+@media (max-width: 480px) {
+  .landingDiv {
+    flex-direction: column;
+  }
+}
