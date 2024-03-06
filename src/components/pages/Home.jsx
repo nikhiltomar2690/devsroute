@@ -27,7 +27,7 @@ export const Home = () => {
         </div>
       </div>
       <Benefits />
-      <div id="benefits">11</div>
+      <div id="benefits"></div>
       <GetSkilled />
       <Testimonial />
       <div className="div-container">

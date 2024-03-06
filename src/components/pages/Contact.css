@@ -119,6 +119,10 @@ textarea.input {
   top: 1rem;
   transform: translateY(0);
 }
+.message-container {
+  border: 1px solid white;
+  color: white;
+}
 
 .btn {
   padding: 0.6rem 1.3rem;

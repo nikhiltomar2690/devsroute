@@ -32,6 +32,10 @@ export const Contact = () => {
 
     // Change button text to "Submitted"
     setSubmitButtonText("Submitted");
+
+    setTimeout(function () {
+      setSubmitButtonText("Send");
+    }, 2000);
   };
 
   useEffect(() => {
@@ -146,7 +150,6 @@ export const Contact = () => {
                 <label htmlFor="message">Message</label>
                 <span>Message</span>
               </div>
-
               <input type="submit" value={submitButtonText} className="btn" />
             </form>
           </div>
