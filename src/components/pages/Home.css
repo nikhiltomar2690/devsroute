@@ -6,6 +6,9 @@
   padding: 0;
   gap: 80px;
 }
+.ipad-text {
+  color: #2cee91;
+}
 .tagline {
   font-size: 3.125rem;
   line-height: 1.5;
