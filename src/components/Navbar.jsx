@@ -1,4 +1,4 @@
-import darkmode from "../img/darkmode.png";
+// import darkmode from "../img/darkmode.png";
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../img/Logo.png";
 import { useState } from "react";
@@ -35,11 +35,11 @@ export const Navbar = () => {
         <li>
           <NavLink to="/roadmaps">Roadmaps</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink>
             <img src={darkmode} alt="" className="darkmode" />
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "../../img/become10x.png";
 
-export const ContainerScroll = ({ users, titleComponent }) => {
+export const ContainerScroll = ({ titleComponent }) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -30,7 +30,7 @@ export const ContainerScroll = ({ users, titleComponent }) => {
 
   return (
     <div
-      className="h-[44rem] md:h-[64rem] flex items-center justify-center relative p-2 md:p-6 ipad-container"
+      className="h-[45rem] md:h-[65rem] flex items-center justify-center relative p-2 md:p-6 ipad-container"
       ref={containerRef}
     >
       <div
