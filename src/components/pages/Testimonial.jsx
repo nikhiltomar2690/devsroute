@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Testimonial.css";
 import person from "../../img/person.png";
 import { TestimonialCard } from "./TestimonialCard";
@@ -25,36 +25,15 @@ export const Testimonial = () => {
         onMouseLeave={handleMouseLeave}
       >
         <div className={`cards-testimonial ${isPaused ? "paused" : ""}`}>
-          <TestimonialCard
-            role="SDE @NI"
-            name="Jos Buttler"
-            imgsrc={person}
-            content="Big shoutout to DevsUnite for their amazing job features! They made my job hunt smooth sailing. Much appreciated!"
-          />
-          <TestimonialCard
-            role="SDE-3 @Microsoft"
-            name="Jos Buttler"
-            imgsrc={person}
-            content="Big shoutout to DevsUnite for their amazing job features! They made my job hunt smooth sailing. Much appreciated!"
-          />
-          <TestimonialCard
-            role="SDE-3 @Microsoft"
-            name="Jos Buttler"
-            imgsrc={person}
-            content="Big shoutout to DevsUnite for their amazing job features! They made my job hunt smooth sailing. Much appreciated!"
-          />
-          <TestimonialCard
-            role="SDE-3 @Microsoft"
-            name="Jos Buttler"
-            imgsrc={person}
-            content="Big shoutout to DevsUnite for their amazing job features! They made my job hunt smooth sailing. Much appreciated!"
-          />
-          <TestimonialCard
-            role="Data Scientist @Harness"
-            name="Jos Buttler"
-            imgsrc={person}
-            content="Big shoutout to DevsUnite for their amazing job features! They made my job hunt smooth sailing. Much appreciated!"
-          />
+          {[...Array(10)].map((_, index) => (
+            <TestimonialCard
+              key={index}
+              role={`Role ${index}`}
+              name="Jos Buttler"
+              imgsrc={person}
+              content="Big shoutout to DevsUnite for their amazing job features! They made my job hunt smooth sailing. Much appreciated!"
+            />
+          ))}
         </div>
       </div>
     </div>
