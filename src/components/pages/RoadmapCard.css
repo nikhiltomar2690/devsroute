@@ -1,0 +1,10 @@
+.roadmap-card {
+  border: 2px solid green;
+  border-radius: 10px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.roadmap-card:hover {
+  transform: scale(1.5x);
+}
