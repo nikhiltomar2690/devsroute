@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/whydevsunite" element={<WhyDevsUnite />} />
-        <Route path="/roadmaps/:id" element={<RoadmapTest />} />
+        <Route path="/roadmaps/:roadmapId" element={<RoadmapTest />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/roadmaps" element={<Roadmaps />} />
       </Routes>
