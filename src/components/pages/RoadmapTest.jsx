@@ -1,26 +1,21 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { RoadmapCard } from "./RoadmapCard";
-import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import { getDoc, doc } from "firebase/firestore";
 
 export const RoadmapTest = () => {
   const { roadmapId } = useParams();
-  console.log("Roadmap ID:", roadmapId);
-  const [roadmap, setRoadmap] = useState(null); // Initialize roadmap state
-  const [loading, setLoading] = useState(true); // Add loading state
-  const [error, setError] = useState(null); // Add error state
+  const [roadmap, setRoadmap] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    let debounceTimer;
     const fetchRoadmapById = async () => {
       try {
-        console.log("Fetching roadmap with ID:", roadmapId);
-        const docRef = doc(db, "Roadmaps", roadmapId); // Get document reference
-        console.log("Document reference:", docRef);
+        const docRef = doc(db, "WebRoadmaps", roadmapId); // Access Firestore document
         const docSnapshot = await getDoc(docRef);
-        console.log("Document snapshot:", docSnapshot);
         if (docSnapshot.exists()) {
-          // Update roadmap state with fetched data
           setRoadmap({ id: docSnapshot.id, ...docSnapshot.data() });
         } else {
           setError("Roadmap document not found");
@@ -29,16 +24,21 @@ export const RoadmapTest = () => {
         console.error("Error fetching roadmap: ", error);
         setError("Error fetching roadmap");
       } finally {
-        setLoading(false); // Update loading state
+        setLoading(false);
       }
     };
 
     if (roadmapId) {
-      fetchRoadmapById();
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        fetchRoadmapById();
+      }, 500); // Adjust the debounce delay as needed (e.g., 500ms)
     } else {
       setError("No roadmap ID found");
-      setLoading(false); // Update loading state
+      setLoading(false);
     }
+
+    return () => clearTimeout(debounceTimer); // Clear the timer on component unmount
   }, [roadmapId]);
 
   return (
@@ -49,9 +49,31 @@ export const RoadmapTest = () => {
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        // Render RoadmapCard only when roadmap data is available
-        roadmap && <RoadmapCard roadmap={roadmap} />
+        <div>
+          <h4>{roadmap.title}</h4>
+          <p>ID: {roadmap.id}</p>
+          {roadmap.imageURL && (
+            <img src={roadmap.imageURL} alt="Roadmap Image" />
+          )}
+
+          <div>
+            {Object.keys(roadmap.syllabus).map((topic) => (
+              <div key={topic}>
+                <details>
+                  <summary>{topic}</summary>
+                  <ul>
+                    {roadmap.syllabus[topic].map((subtopic, index) => (
+                      <li key={index}>{subtopic}</li>
+                    ))}
+                  </ul>
+                </details>
+              </div>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );
 };
+
+export default RoadmapTest;

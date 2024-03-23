@@ -84,6 +84,7 @@ form {
   outline: none;
   border: 2px solid white;
   background: none;
+  background-color: transparent;
   padding: 0.6rem 1.2rem;
   color: #fff;
   font-weight: 500;
@@ -96,6 +97,7 @@ form {
 textarea.input {
   padding: 0.8rem 1.2rem;
   min-height: 150px;
+  background-color: transparent;
   border-radius: 5px;
   resize: none;
   overflow-y: auto;

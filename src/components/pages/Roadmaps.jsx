@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import { RoadmapCard } from "./RoadmapCard";
-import "./RoadmapCard.css";
 
 export const Roadmaps = () => {
   const [roadmapsData, setRoadmapsData] = useState([]);
@@ -12,8 +11,7 @@ export const Roadmaps = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "Roadmaps"));
-        // console.log(querySnapshot);
+        const querySnapshot = await getDocs(collection(db, "WebRoadmaps"));
         const fetchedData = [];
         querySnapshot.forEach((doc) => {
           fetchedData.push({ id: doc.id, ...doc.data() });
@@ -37,10 +35,10 @@ export const Roadmaps = () => {
       ) : (
         <ul>
           {roadmapsData.map((roadmap) => (
-            <li key={roadmap.id} className="roadmap-card">
-              <Link to={`/roadmaps/${roadmap.id}`}>
-                <RoadmapCard roadmap={roadmap} />
-              </Link>
+            <li key={roadmap.id}>
+              {/* <Link to={`/roadmaps/${roadmap.id}`}> */}
+              <RoadmapCard roadmap={roadmap} />
+              {/* </Link> */}
             </li>
           ))}
         </ul>
