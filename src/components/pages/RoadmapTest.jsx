@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebaseConfig";
 import { getDoc, doc } from "firebase/firestore";
+import "./RoadmapTest.css";
 
 export const RoadmapTest = () => {
   const { roadmapId } = useParams();
@@ -32,7 +33,7 @@ export const RoadmapTest = () => {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
         fetchRoadmapById();
-      }, 500); // Adjust the debounce delay as needed (e.g., 500ms)
+      }, 1000); // Adjust the debounce delay as needed (e.g., 500ms)
     } else {
       setError("No roadmap ID found");
       setLoading(false);
@@ -42,21 +43,24 @@ export const RoadmapTest = () => {
   }, [roadmapId]);
 
   return (
-    <div className="roadmap-card">
-      <h3>Roadmap Details</h3>
+    <div>
+      {/* <h3>Roadmap Details</h3> */}
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <div>
-          <h4>{roadmap.title}</h4>
-          <p>ID: {roadmap.id}</p>
-          {roadmap.imageURL && (
+        <div className="roadmap-detailed">
+          <h1>
+            <span className="title-style">{roadmap.roadmapTitle}</span> Roadmap
+          </h1>
+          <h6>{roadmap.tagline}</h6>
+          {/* <p>ID: {roadmap.id}</p> */}
+          {/* {roadmap.imageURL && (
             <img src={roadmap.imageURL} alt="Roadmap Image" />
-          )}
+          )} */}
 
-          <div>
+          <div className="accordion-topics">
             {Object.keys(roadmap.syllabus).map((topic) => (
               <div key={topic}>
                 <details>

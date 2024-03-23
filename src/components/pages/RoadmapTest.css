@@ -1,0 +1,21 @@
+.roadmap-detailed {
+}
+
+.roadmap-detailed h1 {
+  margin: 20px 30px 0;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.roadmap-detailed h6 {
+  margin: 10px 30px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.title-style {
+  color: #2cee91;
+}
+.accordion-topics {
+  margin: 20px 30px 0;
+}

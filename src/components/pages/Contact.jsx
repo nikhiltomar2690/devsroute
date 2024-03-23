@@ -144,6 +144,7 @@ export const Contact = () => {
                 <textarea
                   name="message"
                   className="input"
+                  type="text"
                   value={formData.message}
                   onChange={handleChange}
                 ></textarea>
