@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import { RoadmapCard } from "./RoadmapCard";
+import "./Roadmaps.css";
 
 export const Roadmaps = () => {
   const [roadmapsData, setRoadmapsData] = useState([]);
@@ -33,12 +34,12 @@ export const Roadmaps = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <ul className="roadmapList">
           {roadmapsData.map((roadmap) => (
             <li key={roadmap.id}>
-              {/* <Link to={`/roadmaps/${roadmap.id}`}> */}
-              <RoadmapCard roadmap={roadmap} />
-              {/* </Link> */}
+              <Link to={`/roadmaps/${roadmap.id}`}>
+                <RoadmapCard roadmap={roadmap} />
+              </Link>
             </li>
           ))}
         </ul>
