@@ -28,4 +28,15 @@
   .landingDiv {
     flex-direction: column;
   }
+
+  .skills {
+    width: 60%;
+    height: 60%;
+    margin-bottom: 0;
+  }
+  .landingimage {
+    margin-top: 0;
+    width: 19rem;
+    height: 19rem;
+  }
 }

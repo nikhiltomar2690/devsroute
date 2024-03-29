@@ -28,6 +28,17 @@
   border-radius: 5px;
   margin-top: 10px;
 }
+.downloadButtonupper {
+  font-size: 1.188rem;
+  width: 11rem;
+  height: 3.2rem;
+  border: none;
+  background-color: #2cee91;
+  color: black;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 .downloadcard {
   display: flex;
   justify-content: center;
@@ -96,7 +107,14 @@
   margin: 0% 1%;
 }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 768px) {
+  .landingimage {
+    width: 10rem;
+    height: 10rem;
+  }
+  .tagline {
+    font-size: 2rem;
+  }
   .footer {
     text-align: left;
     padding: 5%;
@@ -111,16 +129,75 @@
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+  .landingimage {
+    width: 10rem;
+    height: 10rem;
+  }
+  .tagline {
+    font-size: 1.5rem;
+  }
   .landingDiv {
     flex-direction: column;
   }
+  .download-mainheading {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+  .download-subheading {
+    font-weight: 0.9rem;
+  }
+  .downloadButton {
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    margin-top: -7rem;
+    margin-bottom: 1rem;
+  }
+  .downloadButtonupper {
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+  }
   .downloadcard {
     display: flex;
+    width: 20rem;
+    height: fit-content;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .div-container {
+    margin: 5rem 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer {
+    background: #000;
+    padding: 30px 0px;
+    font-family: "Lexend", sans-serif;
+    text-align: center;
+  }
+  .footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+  }
+  .list-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .taglinediv {
+    display: flex;
+    text-align: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
 }

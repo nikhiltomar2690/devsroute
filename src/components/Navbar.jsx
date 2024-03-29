@@ -1,4 +1,3 @@
-// import darkmode from "../img/darkmode.png";
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../img/Logo.png";
 import { useState } from "react";

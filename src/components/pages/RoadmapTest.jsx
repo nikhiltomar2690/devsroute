@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { db } from "../../firebaseConfig";
 import { getDoc, doc } from "firebase/firestore";
 import "./RoadmapTest.css";
+import dropdownarrow from "../../img/arrow-down.png";
+import github from "../../img/dev-github.png";
 
 export const RoadmapTest = () => {
   const { roadmapId } = useParams();
@@ -61,18 +63,40 @@ export const RoadmapTest = () => {
           )} */}
 
           <div className="accordion-topics">
-            {Object.keys(roadmap.syllabus).map((topic) => (
-              <div key={topic}>
-                <details>
-                  <summary>{topic}</summary>
-                  <ul>
-                    {roadmap.syllabus[topic].map((subtopic, index) => (
-                      <li key={index}>{subtopic}</li>
-                    ))}
-                  </ul>
-                </details>
-              </div>
-            ))}
+            <div className="img-container">
+              <h1>
+                Still Confused? Get Help{" "}
+                <span className="helpLink">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.replit.app&hl=en_IN&gl=US"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    here
+                  </a>
+                </span>
+              </h1>
+              {/* <img src={github} alt="" /> */}
+            </div>
+            <div className="details">
+              {Object.keys(roadmap.syllabus).map((topic, topicIndex) => (
+                <div key={topicIndex} className="details-container">
+                  <details className="accordion" open={false}>
+                    <summary className="accordion-summary">
+                      {topic}
+                      <img src={dropdownarrow} alt="Icon" className="icon" />
+                    </summary>
+                    <ul>
+                      {roadmap.syllabus[topic].map(
+                        (subtopic, subtopicIndex) => (
+                          <li key={subtopicIndex}>{subtopic}</li>
+                        )
+                      )}
+                    </ul>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}

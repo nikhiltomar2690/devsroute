@@ -4,7 +4,7 @@
 
 .cards-testimonial-container {
   display: flex;
-  overflow: hidden; /* Hide scrollbar */
+  overflow: hidden;
 }
 
 .cards-testimonial {
@@ -25,5 +25,11 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards-testimonial {
+    gap: 2rem;
   }
 }

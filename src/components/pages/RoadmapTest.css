@@ -1,13 +1,82 @@
 .roadmap-detailed {
 }
+.accordion {
+  background-color: #222222;
+  padding: 7px;
+}
+
+.details-container {
+  border-radius: 7px;
+}
+
+.accordion summary {
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 7px;
+  padding-left: 25px;
+  text-align: left;
+  height: 60px;
+  width: 550px;
+  color: black;
+  background-color: #ebedf0;
+}
+
+details summary {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.accordion summary img {
+  background: none;
+  max-width: 50%; /* Adjust the percentage as needed */
+}
+
+.accordion[open] summary img {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+details > ul {
+  list-style: none;
+  border: 2px solid white;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: #222222;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+details ul li {
+  padding: 5px;
+  background-color: #222222;
+  font-weight: 300;
+  font-size: medium;
+}
+
+details ul li:hover {
+  color: #2cee91;
+}
+.accordion[open] .accordion-summary {
+  background-color: white; /* Change this to your desired color */
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
 
 .roadmap-detailed h1 {
+  text-align: center;
   margin: 20px 30px 0;
   font-size: 40px;
   font-weight: 600;
 }
 
 .roadmap-detailed h6 {
+  text-align: center;
   margin: 10px 30px 0;
   font-size: 20px;
   font-weight: 400;
@@ -17,5 +86,35 @@
   color: #2cee91;
 }
 .accordion-topics {
-  margin: 20px 30px 0;
+  background-image: url(../../img/curve-bg_out.png);
+  /* background-color: #222222; */
+  margin: 30px 40px 0;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  align-items: center;
+  border-radius: 10px;
+  padding: 40px 50px;
+  margin: 40px auto;
+  height: 800px;
+  width: 1200px;
+}
+
+.helpLink {
+  color: #2cee91;
+  text-decoration: underline;
+  background-color: #222222;
+}
+
+.img-container {
+  background-color: transparent;
+}
+
+.img-container h1 {
+  font-size: 28px;
+  background-color: transparent;
+}
+
+.img-container span a {
+  background-color: transparent;
 }

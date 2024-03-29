@@ -12,6 +12,7 @@ nav {
   position: sticky;
   top: 0;
 }
+
 nav ul {
   display: flex;
 }
@@ -35,12 +36,11 @@ nav ul li a {
 }
 
 nav .title {
-  width: 28.5%;
+  padding-top: 0;
+  width: 31.5%;
   height: auto;
-  /* margin: 1rem; */
 }
 
-/* apply styling to all elements except the one having active class */
 nav ul li a:not(.active):hover {
   color: #2cee91;
 }
@@ -48,12 +48,11 @@ nav ul li a:not(.active):hover {
 nav .menu {
   display: none;
   position: absolute;
-  /* top: 0.75rem; */
   right: 0.5rem;
   flex-direction: column;
   justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.6rem;
 }
 
 nav .menu span {
@@ -65,13 +64,12 @@ nav .menu span {
 @media (max-width: 480px) {
   nav {
     margin: 0 1rem;
+    flex-direction: column;
+    align-items: start;
   }
   nav .menu {
     display: flex;
-  }
-  nav {
-    flex-direction: column;
-    align-items: start;
+    margin-top: 1rem;
   }
   nav ul {
     display: none;
@@ -81,6 +79,9 @@ nav .menu span {
   }
   nav ul.open {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
   }
   nav ul li {
     width: 100%;

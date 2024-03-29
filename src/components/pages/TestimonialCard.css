@@ -27,3 +27,23 @@
   font-size: 1.1rem;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .card-testimonial {
+    width: 18rem;
+    height: 23.188rem;
+  }
+  .card-img {
+    height: 7rem;
+    width: 7rem;
+  }
+  .card-name {
+    font-size: 1.2rem;
+  }
+  .card-role {
+    font-size: 0.8rem;
+  }
+  .card-content {
+    font-size: 1rem;
+  }
+}
