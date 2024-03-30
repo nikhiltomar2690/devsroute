@@ -118,3 +118,54 @@ details summary::-webkit-details-marker {
 .img-container span a {
   background-color: transparent;
 }
+
+@media screen and (max-width: 768px) {
+  .accordion-topics {
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    padding: 20px;
+  }
+  .accordion {
+    width: 100%;
+  }
+  .accordion summary {
+    width: 100%;
+  }
+  .accordion-topics img {
+    display: none;
+  }
+  .img-container h1 {
+    font-size: 20px;
+  }
+  .img-container span a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .accordion-topics {
+    margin-top: 3rem;
+    width: 90%;
+    padding: 10px;
+  }
+  .accordion summary {
+    width: 18rem;
+  }
+  .accordion-topics img {
+    display: none;
+  }
+  .img-container h1 {
+    margin-bottom: 1rem;
+    font-size: 16px;
+  }
+  .img-container span a {
+    font-size: 14px;
+  }
+}

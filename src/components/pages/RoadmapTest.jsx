@@ -57,10 +57,6 @@ export const RoadmapTest = () => {
             <span className="title-style">{roadmap.roadmapTitle}</span> Roadmap
           </h1>
           <h6>{roadmap.tagline}</h6>
-          {/* <p>ID: {roadmap.id}</p> */}
-          {/* {roadmap.imageURL && (
-            <img src={roadmap.imageURL} alt="Roadmap Image" />
-          )} */}
 
           <div className="accordion-topics">
             <div className="img-container">

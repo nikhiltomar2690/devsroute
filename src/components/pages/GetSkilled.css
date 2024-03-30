@@ -25,6 +25,11 @@
 }
 
 @media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    margin: 0 auto !important;
+  }
   .landingDiv {
     flex-direction: column;
   }
@@ -32,11 +37,29 @@
   .skills {
     width: 60%;
     height: 60%;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
   }
   .landingimage {
-    margin-top: 0;
-    width: 19rem;
-    height: 19rem;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin: 0 auto !important;
+  }
+  .landingDiv {
+    flex-direction: column;
+  }
+
+  .skills {
+    width: 60%;
+    height: 60%;
+    margin-bottom: 1rem;
+  }
+  .landingimage {
+    display: none;
   }
 }

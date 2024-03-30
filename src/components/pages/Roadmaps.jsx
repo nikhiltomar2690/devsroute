@@ -26,7 +26,7 @@ export const Roadmaps = () => {
     };
 
     fetchData();
-  }, []);
+  }, [roadmapsData]);
 
   return (
     <div>

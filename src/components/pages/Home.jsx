@@ -37,6 +37,7 @@ export const Home = () => {
         </div>
         <img src={LandingImage} alt="" className="landingimage" />
       </div>
+      <br />
       {/* <div className="typewriter">
         <TypewriterEffectSmooth words={words} />
       </div> */}

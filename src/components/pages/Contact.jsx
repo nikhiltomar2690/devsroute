@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Contact.css"; // Import CSS file for styling
+import "./Contact.css";
 
 export const Contact = () => {
   const [submitButtonText, setSubmitButtonText] = useState("Send");
@@ -71,7 +71,7 @@ export const Contact = () => {
         <img src="img/shape.png" className="square" alt="" />
         <div className="form">
           <div className="contact-info">
-            <h3 className="title">Let's get in touch</h3>
+            <h3 className="title">Let&apos;s get in touch</h3>
             <p className="text">Wanna collaborate or have anything to say?</p>
 
             <div className="info">

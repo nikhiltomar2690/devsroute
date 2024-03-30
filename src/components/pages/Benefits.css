@@ -20,7 +20,25 @@
   margin: 3% 0;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .fact {
+    font-size: 1rem;
+  }
+  .cardsdiv {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .fact {
+    font-size: 0.9rem;
+  }
   .cardsdiv {
     flex-direction: column;
   }
