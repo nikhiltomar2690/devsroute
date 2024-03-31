@@ -9,6 +9,7 @@
   .roadmapList {
     margin-left: 0 !important;
     justify-content: center;
+    gap: 1rem !important;
     align-items: center;
     flex-direction: column;
   }

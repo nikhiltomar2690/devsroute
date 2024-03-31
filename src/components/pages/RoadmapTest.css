@@ -156,16 +156,18 @@ details summary::-webkit-details-marker {
     padding: 10px;
   }
   .accordion summary {
-    width: 18rem;
+    font-size: 1rem;
+    width: 15rem;
+    height: 3rem;
   }
   .accordion-topics img {
     display: none;
   }
   .img-container h1 {
     margin-bottom: 1rem;
-    font-size: 16px;
+    font-size: 20px;
   }
   .img-container span a {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
