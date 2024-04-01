@@ -1,0 +1,32 @@
+.titleterms {
+  text-align: center;
+  color: #2cee91;
+  font-size: 4rem;
+}
+.terms {
+  color: #2cee91;
+  font-size: 1rem;
+  margin: 2rem 4rem;
+}
+.privacypolicy {
+  color: #2cee91;
+}
+.privacypolicytext {
+  color: #2cee91;
+}
+
+@media screen and (max-width: 768px) {
+  .titleterms {
+    font-size: 2rem;
+  }
+  .terms {
+    text-align: center;
+    margin: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .titleterms {
+    font-size: 1.3rem;
+  }
+}
