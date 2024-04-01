@@ -14,10 +14,11 @@ export const Home = () => {
   return (
     <>
       <ContainerScroll
+        className="m-0"
         titleComponent={
-          <h1 className="text-4xl font-semibold text-black dark:text-white">
+          <h1 className="text-4xl font-semibold text-black dark:text-white m-0">
             Become a <br />
-            <span className="text-4xl md:text-[6rem] font-bold mb-2 md:mb-3 leading-none ipad-text block">
+            <span className="text-4xl md:text-[6rem] font-bold mb-0 md:mb-3 leading-none ipad-text block">
               10x Developer
             </span>
           </h1>
