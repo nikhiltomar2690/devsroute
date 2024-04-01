@@ -85,4 +85,9 @@ nav .menu span {
   nav ul li a {
     margin: 0.2rem 0.5rem;
   }
+  nav .title {
+    width: 8rem;
+    margin-bottom: 10rem;
+    margin-top: 0.5rem !important;
+  }
 }
