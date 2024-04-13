@@ -23,19 +23,42 @@ export const Contact = () => {
     // Your form submission logic here
     console.log("Form submitted:", formData);
 
-    // Reset form fields
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-
     // Change button text to "Submitted"
     setSubmitButtonText("Submitted");
 
-    setTimeout(function () {
-      setSubmitButtonText("Send");
-    }, 2000);
+    // Perform AJAX request
+    fetch("https://formsubmit.co/ajax/devsunite2024@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Log response from the server
+        console.log(data);
+
+        // Reset form fields
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+
+        setTimeout(function () {
+          setSubmitButtonText("Send");
+        }, 200);
+      })
+      .catch((error) => {
+        console.log(error);
+        setSubmitButtonText("Send");
+      });
   };
 
   useEffect(() => {
@@ -108,13 +131,7 @@ export const Contact = () => {
             <span className="circle one"></span>
             <span className="circle two"></span>
 
-            <form
-              onSubmit={handleSubmit}
-              autoComplete="off"
-              action="https://formsubmit.co/devsunite2024@gmail.com"
-              method="POST"
-              encType="multipart/form-data"
-            >
+            <form onSubmit={handleSubmit} autoComplete="off">
               <h3 className="title">Contact us</h3>
               <div className="input-container">
                 <input
