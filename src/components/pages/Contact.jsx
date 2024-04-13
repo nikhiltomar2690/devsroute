@@ -27,7 +27,7 @@ export const Contact = () => {
     setSubmitButtonText("Submitted");
 
     // Perform AJAX request
-    fetch("https://formsubmit.co/ajax/devsunite2024@gmail.com", {
+    fetch("https://formsubmit.co/ajax/cs.devsunite.com@gmail.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
