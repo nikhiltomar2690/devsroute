@@ -4,7 +4,6 @@ import { db } from "../../firebaseConfig";
 import { getDoc, doc } from "firebase/firestore";
 import "./RoadmapTest.css";
 import dropdownarrow from "../../img/arrow-down.png";
-import github from "../../img/dev-github.png";
 
 export const RoadmapTest = () => {
   const { roadmapId } = useParams();
@@ -16,10 +15,24 @@ export const RoadmapTest = () => {
     let debounceTimer;
     const fetchRoadmapById = async () => {
       try {
-        const docRef = doc(db, "WebRoadmaps", roadmapId); // Access Firestore document
+        const docRef = doc(db, "WebRoadmaps", roadmapId);
         const docSnapshot = await getDoc(docRef);
         if (docSnapshot.exists()) {
-          setRoadmap({ id: docSnapshot.id, ...docSnapshot.data() });
+          const roadmapData = docSnapshot.data();
+          const sortedSyllabus = {};
+          const sortedKeys = Object.keys(roadmapData.syllabus).sort((a, b) =>
+            a.substring(0, 2).localeCompare(b.substring(0, 2))
+          );
+          sortedKeys.forEach((key) => {
+            // Modify the key to hide the first two letters
+            const modifiedKey = key.substring(2);
+            sortedSyllabus[modifiedKey] = roadmapData.syllabus[key];
+          });
+          setRoadmap({
+            id: docSnapshot.id,
+            ...roadmapData,
+            syllabus: sortedSyllabus,
+          });
         } else {
           setError("Roadmap document not found");
         }
@@ -35,13 +48,13 @@ export const RoadmapTest = () => {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
         fetchRoadmapById();
-      }, 1000); // Adjust the debounce delay as needed (e.g., 500ms)
+      }, 1000);
     } else {
       setError("No roadmap ID found");
       setLoading(false);
     }
 
-    return () => clearTimeout(debounceTimer); // Clear the timer on component unmount
+    return () => clearTimeout(debounceTimer);
   }, [roadmapId]);
 
   return (
@@ -57,7 +70,8 @@ export const RoadmapTest = () => {
             <span className="title-style">{roadmap.roadmapTitle}</span> Roadmap
           </h1>
           <h6>{roadmap.tagline}</h6>
-
+          <br />
+          <p className="designed-caption">Designed by Industry Experts</p>
           <div className="accordion-topics">
             <div className="img-container">
               <h1>
@@ -72,7 +86,6 @@ export const RoadmapTest = () => {
                   </a>
                 </span>
               </h1>
-              {/* <img src={github} alt="" /> */}
             </div>
             <div className="details">
               {Object.keys(roadmap.syllabus).map((topic, topicIndex) => (

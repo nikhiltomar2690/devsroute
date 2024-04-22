@@ -15,8 +15,21 @@ export const Roadmaps = () => {
         const querySnapshot = await getDocs(collection(db, "WebRoadmaps"));
         const fetchedData = [];
         querySnapshot.forEach((doc) => {
-          fetchedData.push({ id: doc.id, ...doc.data() });
+          const roadmapData = doc.data();
+          const sortedSyllabus = {};
+          // Extract keys, sort them, and construct a new object with sorted keys
+          const sortedKeys = Object.keys(roadmapData.syllabus).sort();
+          sortedKeys.forEach((key) => {
+            sortedSyllabus[key] = roadmapData.syllabus[key];
+          });
+          fetchedData.push({
+            id: doc.id,
+            ...roadmapData,
+            syllabus: sortedSyllabus,
+          });
         });
+        // Sort the roadmaps by ID
+        fetchedData.sort((a, b) => a.id.localeCompare(b.id));
         setRoadmapsData(fetchedData);
         setLoading(false);
       } catch (error) {
@@ -26,11 +39,11 @@ export const Roadmaps = () => {
     };
 
     fetchData();
-  }, [roadmapsData]);
+  }, []);
 
   return (
     <div>
-      <h1>Roadmaps</h1>
+      <h1 className="roadmaps-title">Roadmaps</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

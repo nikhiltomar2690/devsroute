@@ -41,10 +41,8 @@ export const Contact = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Log response from the server
         console.log(data);
 
-        // Reset form fields
         setFormData({
           name: "",
           email: "",

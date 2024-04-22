@@ -1,10 +1,14 @@
 .roadmap-detailed {
 }
 .accordion {
-  background-color: #222222;
+  background-color: transparent;
   padding: 7px;
 }
-
+.designed-caption {
+  text-align: center;
+  font-style: italic;
+  font-weight: 200;
+}
 .details-container {
   border-radius: 7px;
 }
@@ -45,14 +49,14 @@ details > ul {
   border: 2px solid white;
   border-radius: 7px;
   padding: 10px;
-  background-color: #222222;
+  /* background-color: #222222; */
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
 }
 
 details ul li {
   padding: 5px;
-  background-color: #222222;
+  /* background-color: #222222; */
   font-weight: 300;
   font-size: medium;
 }
@@ -86,24 +90,31 @@ details summary::-webkit-details-marker {
   color: #2cee91;
 }
 .accordion-topics {
-  background-image: url(../../img/curve-bg_out.png);
+  background: rgba(74, 74, 74, 0.25) !important;
+  box-shadow: 0 8px 32px 0 rgba(140, 140, 141, 0.37) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   /* background-color: #222222; */
   margin: 30px 40px 0;
   display: flex;
   justify-content: space-between;
   /* flex-direction: column; */
+  overflow-y: auto;
   align-items: center;
   border-radius: 10px;
   padding: 40px 50px;
   margin: 40px auto;
-  height: 800px;
+  /* height: 800px; Remove fixed height */
   width: 1200px;
+  margin-bottom: 40px !important;
 }
 
 .helpLink {
   color: #2cee91;
   text-decoration: underline;
-  background-color: #222222;
+  background-color: transparent;
 }
 
 .img-container {
