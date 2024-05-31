@@ -34,7 +34,13 @@ export const Home = () => {
               Uniting <span style={{ color: "#2cee91" }}>opportunities.</span>
             </p>
           </div>
-          <button className="downloadButtonupper">Download App</button>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.devsunite.mobile"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="downloadButtonupper">Download App</button>
+          </a>
         </div>
         <img src={LandingImage} alt="" className="landingimage" />
       </div>
@@ -60,12 +66,18 @@ export const Home = () => {
               hackathon. Join us and dive into the coding universe today!
             </p>
           </div>
-          <button className="downloadButton">Download App</button>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.devsunite.mobile"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="downloadButton">Download App</button>
+          </a>
         </div>
       </div>
       <footer>
         <div className="footer">
-          <div className="row">
+          {/* <div className="row">
             <a href="#">
               <i className="fa fa-instagram"></i>
             </a>
@@ -75,7 +87,7 @@ export const Home = () => {
             <a href="#">
               <i className="fa fa-twitter"></i>
             </a>
-          </div>
+          </div> */}
 
           <div className="row">
             <ul className="list-flex">

@@ -131,6 +131,12 @@ details summary::-webkit-details-marker {
 }
 
 @media screen and (max-width: 768px) {
+  .img-container h1 {
+    font-size: 1rem !important;
+  }
+  .img-container span a {
+    font-size: 1rem !important;
+  }
   .accordion-topics {
     flex-direction: column;
     height: 100%;
@@ -138,10 +144,23 @@ details summary::-webkit-details-marker {
     padding: 20px;
   }
   .accordion {
-    width: 100%;
+    width: 90%;
+    height: auto;
+    padding: 10px;
   }
-  .accordion summary {
-    width: 100%;
+  /* .accordion summary {
+    width: 90%;
+    height: auto;
+  } */
+
+  .accordion-summary {
+    padding: 10px !important;
+    height: fit-content !important;
+  }
+  details > ul {
+    width: 90%;
+    height: fit-content !important;
+    padding: 10px !important;
   }
   .accordion-topics img {
     display: none;

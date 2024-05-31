@@ -95,7 +95,7 @@ export const RoadmapTest = () => {
                       {topic}
                       <img src={dropdownarrow} alt="Icon" className="icon" />
                     </summary>
-                    <ul>
+                    <ul className="list-container">
                       {roadmap.syllabus[topic].map(
                         (subtopic, subtopicIndex) => (
                           <li key={subtopicIndex}>{subtopic}</li>
