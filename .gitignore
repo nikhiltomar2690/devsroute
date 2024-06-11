@@ -4,3 +4,5 @@ postcss.config.js
 package-lock.json
 package.json
 .env
+dist
+app-ads.txt
